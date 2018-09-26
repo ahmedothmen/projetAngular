@@ -1,0 +1,65 @@
+
+<br/>
+<br/>
+<div class="col-sm-6">
+  <h2>
+
+    <i class="fa fa-info-circle"></i> More Informations </h2>
+</div>
+<div class="container"> <h4 [class.text-danger]="haswebsite" [class.text-primary]="!haswebsite"> <a (click)="updateSite=!updateSite" ><i class="fa fa-edit"></i> </a>  website : {{ Employee.website }}
+</h4></div>
+<hr>
+
+<div class="container">
+<form *ngIf="updateSite" (ngSubmit)="editWeb(Employee.id)" >
+  <div class="form-group">
+    <input type="text" class="form-control" [(ngModel)]='Employee.website' name="website" id="website">
+  </div>
+  <button type="submit" class="btn btn-primary">update</button>
+</form>
+<br/>
+<hr>
+</div>
+
+
+
+
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Email</th>
+      <th scope="col">Web site</th>
+      <th scope="col">Phone</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"> {{ Employee.id }}</th>
+      <td>{{ Employee.name }}</td>
+      <td>{{ Employee.username }}</td>
+      <td>{{ Employee.email }}</td>
+      <td>{{ Employee.website }}</td>
+            <td>{{ Employee.phone }}</td>
+      <td><a (clik)="verife()"  class="btn btn-primary">edit <i class="fa fa-edit"></i></a>
+      </td>
+      <td><button (clik)="mydelete()" class="btn btn-danger" >delete <i class="fa fa-trash-alt"></i>
+
+
+
+      </button>
+      </td>
+    
+    </tr>
+   
+  </tbody>
+</table>
+
+
+
+

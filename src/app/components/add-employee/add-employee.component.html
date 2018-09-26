@@ -1,0 +1,84 @@
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h3> <i class="fa fa-plus"></i> Add Employee </h3> 
+
+  
+   
+    <form novalidate #fo='ngForm' (ngSubmit)="mySubmit(fo)">
+      <div class="form-group">
+        <label for="name">  Name:</label>
+        <input type="text" [(ngModel)]='Employee.name' class="form-control" id="name" name="name" #myName="ngModel" minlength="4" required>
+        <div *ngIf="myName.errors?.required && myName.touched" class="alert alert-danger"  >
+          First name is required
+            </div>
+            <div *ngIf="myName.errors?.minlength && myName.touched" class="alert alert-danger"  >
+              min required 4 caracters
+                </div>
+      
+          </div>
+     
+     
+      <div class="form-group">
+        <label for="username">User name:</label>
+        <input type="text" [(ngModel)]='Employee.username' class="form-control" id="username" name="username"#mylName="ngModel" minlength="4" required >
+        <div *ngIf="mylName.errors?.required && mylName.touched" class="alert alert-danger">
+          Last name is required
+            </div>
+            <div *ngIf="mylName.errors?.minlength && mylName.touched" class="alert alert-danger"  >
+          min required 4 caracters
+            </div>
+      
+      </div>
+    
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" [(ngModel)]='Employee.email' class="form-control" id="email" name="email" #myemail="ngModel" minlength="4" required >
+        <div *ngIf="myemail.errors?.required && myemail.touched" class="alert alert-danger"  >
+          email is required
+            </div>
+            <div *ngIf="myemail.errors?.minlength && myemail.touched" class="alert alert-danger"  >
+          min required 4 caracters
+            </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="text">Website:</label>
+        <input type="text" [(ngModel)]='Employee.website' class="form-control" id="website" name="website" #mywebsite="ngModel" minlength="4" required >
+        <div *ngIf="mywebsite.errors?.required && mywebsite.touched" class="alert alert-danger"  >
+          website is required
+            </div>
+            <div *ngIf="mywebsite.errors?.minlength && mywebsite.touched" class="alert alert-danger"  >
+          min required 4 caracters
+            </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="text">Phone:</label>
+        <input type="text" [(ngModel)]='Employee.phone' class="form-control" id="phone" name="phone" #myphone="ngModel" minlength="4" required >
+        <div *ngIf="myphone.errors?.required && myphone.touched" class="alert alert-danger"  >
+          Phone is required
+            </div>
+            <div *ngIf="myphone.errors?.minlength && myphone.touched" class="alert alert-danger"  >
+          min required 4 caracters
+            </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+ 
+ 
+ 
+  <div class="col-sm-6">
+    <a  routerLink="/"  class="btn btn-warning"> <i class="fa fa-arrow-circle-left"></i>Back To Dashbord 
+
+    </a>
+  </div>
+
+
+
+
+</div>
+
